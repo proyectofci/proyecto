@@ -1,0 +1,108 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.contenedor-main{
+	width: 80%;
+	margin: 20px auto;
+}
+
+.titulo-contenedor{
+	font-size: 2rem;
+	font-weight: 300;
+	font-family: 'Montserrat', sans-serif;
+	display:block;
+	text-align: center;
+	width: 300px;
+	margin: 20px auto;
+
+}
+
+.contenedor-cultivos{
+	width: 100%;
+	display: flex;
+	margin: 30px auto;
+	justify-content: space-around;
+}
+
+.cultivo{
+	width: 20%;
+	margin-top: 10px;
+}
+
+.cultivo__active{
+	cursor: pointer;
+}
+
+.cultivo:hover .cultivo__img img{
+	transform: scale(1.1);
+	
+}
+
+.cultivo__img{
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.cultivo__img img{
+	width: 100%;
+	vertical-align: top;
+	transition: border-radius .2s, transform .2s;
+}
+
+.cultivo__nombre{
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: #232323;
+}
+
+.cultivo__nombre-cientifico{
+	display: block;
+	text-align: center;
+	font-size: 1rem;
+	color: #959595;
+	font-style: italic;
+}
+
+.informacion-cultivos{
+	width: 90%;
+	margin: 40px auto;
+	text-align: center;
+	padding: 20px;
+	overflow: hidden;
+	display: none;
+}
+
+.descripcion-cultivos{
+	width: 100%;
+	background: #EEEEEE;
+	padding: 25px;
+	position: relative;
+}
+
+.descripcion-cultivos:before{
+	content: '';
+    width: 0;
+	height: 0;
+	border-right: 20px solid transparent;
+	border-top: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-bottom: 20px solid #eeeeee;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: -39px auto;
+ }
+
+
+
+
+
