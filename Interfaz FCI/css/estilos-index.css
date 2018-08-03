@@ -8,6 +8,10 @@ a:focus, a:hover{
 	text-decoration: none !important;
 }
 
+.contenedor-principal{
+	padding-bottom: 20px;
+}
+
 .header{
 	width: 100%;
 	padding: 12px 20px;
