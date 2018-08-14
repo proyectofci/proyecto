@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a:focus, a:hover{
+	text-decoration: none !important;
+}
+
+.contenedor-principal{
+	padding-bottom: 20px;
+}
+
+.header{
+	width: 100%;
+	padding: 12px 20px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.header__contenedor-logo{
+	display: flex;
+	align-items: center;
+}
+
+.header__logo{
+	width: 150px;
+	margin-left: 10px;
+}
+
+.header__logo img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.header__menu{
+	width: 50%;
+	display: flex;
+	margin-right: 20px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.menu__opciones{
+	display: flex;
+	font-size: 1rem;
+	margin-right: 30px;
+	padding-top: 5px;
+}
+
+.menu__boton{
+	padding: 0 10px 8px 10px;
+	margin: 0 10px;
+	color: #353537;
+	text-align: center;
+	transition: border-color .2s;
+	font-weight: 600;
+}
+
+.menu__boton:hover{
+	color: #07b57a;
+	border-color: #07b57a;	
+}
+
+.menu__boton--active{
+	color: #07b57a;
+}
+
+.login__boton{
+	border: 1px solid #07b57a;
+	padding: 6px 35px;
+	border-radius: 5px;
+	color: #009e31;
+	font-family: 'Montserrat';
+	transition: background .2s, border .4s, color .2s;
+}
+
+.login__boton:hover{
+	background: #07b57a;
+	color: #fff;
+}
+
+.contenedor-cultivo{
+	width: 50%;
+	margin: 50px auto;
+	/*border-bottom: 1px solid #0eb57a;*/
+	padding-bottom: 20px;
+}
+
+.cultivo{
+	width: 30%;
+	margin: 0 auto;
+}
+
+.cultivo__imagen{
+	width: 100%;
+}
+
+.cultivo__imagen img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.cultivo__nombre-comun{
+	font-weight: bold;
+	text-align: center;
+	font-size: 2rem;
+	padding-top: 15px;
+}
+
+.cultivo__nombre-cientifico{
+	font-size: 1.2rem;
+	font-style: italic;
+	color: #959595;
+	text-align: center;
+}
+
+.contenedor-enfermedades{
+	background: #f6f6f6;
+	width: 85%;
+	margin: 0 auto;
+}
+
+.fila-enfermades{
+	display: flex;
+}
