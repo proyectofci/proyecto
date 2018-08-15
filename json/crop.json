@@ -1,7 +1,7 @@
 [
         {	"id": "1",
             "nombre": "ARROZ",
-            "nombreCientifico": "ORIZA SATIVA ",
+            "nombreCientifico": "ORIZA SATIVA",
 			"resena": "vEl arroz es uno de los cultivos mas importantes ",
             "descripcion": "El arroz es uno de los cultivos mas importantes en nuestro país ya sea por su incidencia económica así como por su importancia y representatividad en la dieta ecuatoriana. El origen de este virtuoso cultivo data de hace 10000 años en las zonas tropicales de Asia donde existía arroz tropical pero en China tuvo su verdadero desarrollo y expansión al resto del mundo. En el Ecuador los cultivos de mayor extensión y representación económica se encuentran en la provincia del Guayas (52%) y los Ríos (42%). El arroz se desarrolla bajo condiciones de trópico húmedo pudiéndose sembrar desde el nivel del mar hasta 1500 msnm pero sus rendimientos disminuyen notablemente a mayor altura, y con temperaturas mínimas de 22º y máximas de 30º ya que a mas temperatura se pierde su capacidad germinativa, siendo lo optimo 22° a 30°. Sus exigencias en suelos varían desde arenosa, arcillosas, mixtas y sobre todo con alta capacidad de retención de humedad. Las principales variedades que se cultivan en el litoral Ecuatoriano son INIAP 15,14, 11 FLS-09, FLS-11 pero cada cierto tiempo surgen nuevas variedades de acuerdo a las exigencias productivas y del mercado.",
             "imagen": "https://raw.githubusercontent.com/proyectofci/proyecto/master/arroz.jpg"
