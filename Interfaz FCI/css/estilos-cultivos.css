@@ -1,0 +1,186 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a:focus, a:hover{
+	text-decoration: none !important;
+}
+
+.contenedor-principal{
+	padding-bottom: 20px;
+}
+
+.header{
+	width: 100%;
+	padding: 12px 20px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.header__contenedor-logo{
+	display: flex;
+	align-items: center;
+}
+
+.header__logo{
+	width: 150px;
+	margin-left: 10px;
+}
+
+.header__logo img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.header__menu{
+	width: 50%;
+	display: flex;
+	margin-right: 20px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.menu__opciones{
+	display: flex;
+	font-size: 1rem;
+	margin-right: 30px;
+	padding-top: 5px;
+}
+
+.menu__boton{
+	padding: 0 10px 8px 10px;
+	margin: 0 10px;
+	color: #353537;
+	text-align: center;
+	transition: border-color .2s;
+	font-weight: 600;
+}
+
+.menu__boton:hover{
+	color: #07b57a;
+	border-color: #07b57a;	
+}
+
+.menu__boton--active{
+	color: #07b57a;
+}
+
+.login__boton{
+	border: 1px solid #07b57a;
+	padding: 6px 35px;
+	border-radius: 5px;
+	color: #009e31;
+	font-family: 'Montserrat';
+	transition: background .2s, border .4s, color .2s;
+}
+
+.login__boton:hover{
+	background: #07b57a;
+	color: #fff;
+}
+
+.contenedor-cultivos{
+	width: 85%;
+	max-width: 1250px;
+	margin: 50px auto;
+	padding: 30px;
+	background: #f6f6f6;
+}
+
+.cultivo{
+	width: 100%;
+	background: #fff;
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.cultivo__imagen{
+	width: 18%;
+	min-width: 200px;
+	max-width: 200px;
+}
+
+.cultivo__imagen img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.cultivo__informacion{
+	width: 100%;
+	border-bottom: 4px solid #0eb57a;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cultivo__datos{
+	padding: 20px 20px 0 20px;
+	width: 80%;
+}
+
+.cultivo__nombre-comun{
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.cultivo__nombre-cientifico{
+	color: #959595;
+	font-size: 1rem;
+	font-style: italic;
+}
+
+.cultivo__descripcion{
+	font-size: .9rem;
+	color: #303030;
+	margin-top: 1em;
+	width: 80%;
+}
+
+.cultivo__contenedor-opciones{
+	padding: 20px 10px;
+	width: 30%;
+	overflow: hidden;
+}
+
+.cultivo__contenedor-opciones
+.contenedor{
+	width: 200%;
+	display: flex;
+}
+
+.cultivo__opciones{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cultivo__sub-opciones{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cultivo__opciones a,
+.cultivo__sub-opciones a{
+	/*display: block;*/
+	width: 75%;
+	padding: 10px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #353537;
+	font-size: .95rem;
+	cursor: pointer;
+}
+
+.cultivo__opciones a:hover,
+.cultivo__sub-opciones a:hover{
+	color: #0eb57a !important;
+}
+
+.cultivo__sub-opciones a{
+	font-weight: 600;
+	font-size: .9rem;
+	padding: 5px 10px;
+}

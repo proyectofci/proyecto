@@ -50,13 +50,10 @@ a:focus, a:hover{
 }
 
 .menu__boton{
-/*	flex-grow: 1;
-	flex-basis: 0;*/
 	padding: 0 10px 8px 10px;
 	margin: 0 10px;
 	color: #353537;
 	text-align: center;
-	/*border-bottom: 2px solid transparent;*/
 	transition: border-color .2s;
 	font-weight: 600;
 }
@@ -68,7 +65,6 @@ a:focus, a:hover{
 
 .menu__boton--active{
 	color: #07b57a;
-	/*border-color: #07b57a;	*/
 }
 
 .login__boton{

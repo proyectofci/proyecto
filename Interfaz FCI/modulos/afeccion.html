@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Proyecto FCI</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/estilos-afeccion.css">
+	<link rel="stylesheet" href="../css/fuentes.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon_32.png" />
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var btnAfecciones = $(".btn-afecciones");
+			var btnVolver = $(".btn-volver");
+			var menuAfecciones;
+
+			btnAfecciones.click(function(){
+				menuAfecciones = $(this).parent();
+				menuAfecciones.animate({
+					'margin-left' : '-100%'
+				}, 250);
+			});
+
+			btnVolver.click(function(){
+				console.log('asd');
+				menuAfecciones = $(this).parent().prev();
+				menuAfecciones.animate({
+					'margin-left' : '0'
+				},250);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="contenedor-principal">
+		<header class="header">
+			<div class="header__contenedor-logo">
+				<div class="header__logo">
+					<a href=""><img src="../img/logo_2.png" alt=""></a>
+				</div>
+			</div>
+
+			<section class="header__menu">
+				<nav class="menu__opciones">
+					<a href="../" class="menu__boton">Home</a>
+					<a href="" class="menu__boton menu__boton--active">Cultivos</a>
+					<a href="" class="menu__boton">Diagnostico</a>
+					<a href="" class="menu__boton">Recomendaciones</a>
+				</nav>
+
+				<div class="menu__login">
+					<a href="" class="login__boton">Login</a>
+				</div>
+			</section>
+
+		</header>
+
+		<section class="contenedor-cultivo">
+			<div class="cultivo">
+				<div class="cultivo__imagen">
+					<img src="../img/arroz.jpg" alt="">
+				</div>
+
+				<h2 class="cultivo__nombre-comun">Arroz</h2>
+				<h5 class="cultivo__nombre-cientifico">Oryza sativa</h5>
+			</div>
+		</section>
+
+		<section class="contenedor-enfermedades">
+			<div class="fila-enfermedades">
+				<div class="enfermedad">
+					<div class="enfermedad__imagen">
+						<img src="../img/pudricion_de_la_vaina.jpg" alt="">
+					</div>
+
+					<div class="enfermedad__informacion">
+						<h2 class="enfermedad__nombre-comun">Quemazon</h2>
+						<h5 class="enfermedad__nombre-cientifico">Pyricularia Oryzae</h5>
+					</div>
+				</div>
+
+				<div class="enfermedad">
+					<div class="enfermedad__imagen">
+						<img src="../img/sogata.jpg" alt="">
+					</div>
+
+					<div class="enfermedad__informacion">
+						<h2 class="enfermedad__nombre-comun">Quemazon</h2>
+						<h5 class="enfermedad__nombre-cientifico">Pyricularia Oryzae</h5>
+					</div>
+				</div>
+
+				<div class="enfermedad">
+					<div class="enfermedad__imagen">
+						<img src="../img/quemazon.jpg" alt="">
+					</div>
+
+					<div class="enfermedad__informacion">
+						<h2 class="enfermedad__nombre-comun">Quemazon</h2>
+						<h5 class="enfermedad__nombre-cientifico">Pyricularia Oryzae</h5>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
