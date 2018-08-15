@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var btnMostrarInfo = $(".cultivo__active");
+	var btnMostrarInfo = $(".home-cultivo__active");
 	var descripcionCultivo = $("#informacion-cultivo");
 	var main = $("#main");
 	var primeraCarga = true;
