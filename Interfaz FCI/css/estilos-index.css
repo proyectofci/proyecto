@@ -17,6 +17,7 @@ a:focus, a:hover{
 	padding: 12px 20px;
 	display: flex;
 	justify-content: space-between;
+	border-bottom: 1px solid #eeeeee;
 }
 
 .header__contenedor-logo{
@@ -77,10 +78,6 @@ a:focus, a:hover{
 }
 
 .login__boton:hover{
-/*	background: #353537;
-	border-color: #353537;
-	color: #fff;*/
-
 	background: #07b57a;
 	color: #fff;
 }
@@ -137,12 +134,16 @@ a:focus, a:hover{
 	border-color: #fff;
 }
 
-.contenedor-main{
+/*===========================================
+						HOME 
+===========================================*/
+
+.home-contenedor-main{
 	width: 80%;
 	margin: 30px auto;
 }
 
-.titulo-contenedor{
+.home-titulo-contenedor{
 	font-size: 2rem;
 	font-weight: 300;
 	font-family: 'Montserrat', sans-serif;
@@ -152,7 +153,7 @@ a:focus, a:hover{
 	margin: 20px auto;
 }
 
-.contenedor-cultivos{
+.home-contenedor-cultivos{
 	width: 100%;
 	max-width: 1100px;
 	display: flex;
@@ -160,32 +161,32 @@ a:focus, a:hover{
 	justify-content: space-around;
 }
 
-.cultivo{
+.home-cultivo{
 	width: 20%;
 	margin-top: 10px;
 }
 
-.cultivo__active{
+.home-cultivo__active{
 	cursor: pointer;
 }
 
-.cultivo:hover .cultivo__img img{
+.home-cultivo:hover .home_cultivo__img img{
 	transform: scale(1.1);
 }
 
-.cultivo__img{
+.home-cultivo__img{
 	width: 100%;
 	border-radius: 50%;
 	overflow: hidden;
 }
 
-.cultivo__img img{
+.home-cultivo__img img{
 	width: 100%;
 	vertical-align: top;
 	transition: border-radius .2s, transform .2s;
 }
 
-.cultivo__nombre{
+.home-cultivo__nombre{
 	display: block;
 	width: 100%;
 	margin-top: 20px;
@@ -195,7 +196,7 @@ a:focus, a:hover{
 	color: #232323;
 }
 
-.cultivo__nombre-cientifico{
+.home-cultivo__nombre-cientifico{
 	display: block;
 	text-align: center;
 	font-size: 1rem;
@@ -203,7 +204,7 @@ a:focus, a:hover{
 	font-style: italic;
 }
 
-.informacion-cultivos{
+.home-informacion-cultivos{
 	width: 90%;
 	margin: 40px auto;
 	text-align: center;
@@ -212,14 +213,14 @@ a:focus, a:hover{
 	display: none;
 }
 
-.descripcion-cultivos{
+.home-descripcion-cultivos{
 	width: 100%;
 	background: #EEEEEE;
 	padding: 25px;
 	position: relative;
 }
 
-.descripcion-cultivos:before{
+.home-descripcion-cultivos:before{
 	content: '';
     width: 0;
 	height: 0;
@@ -234,7 +235,331 @@ a:focus, a:hover{
 	margin: -39px auto;
  }
 
+/*===========================================
+						CULTIVOS 
+===========================================*/
+
+.contenedor-cultivos{
+	width: 85%;
+	max-width: 1250px;
+	margin: 50px auto;
+	padding: 30px;
+	background: #f6f6f6;
+}
+
+.cultivo{
+	width: 100%;
+	background: #fff;
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.cultivo__imagen{
+	width: 18%;
+	min-width: 200px;
+	max-width: 200px;
+}
+
+.cultivo__imagen img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.cultivo__informacion{
+	width: 100%;
+	border-bottom: 4px solid #0eb57a;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cultivo__datos{
+	padding: 20px 20px 0 20px;
+	width: 80%;
+}
+
+.cultivo__nombre-comun{
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.cultivo__nombre-cientifico{
+	color: #959595;
+	font-size: 1rem;
+	font-style: italic;
+}
+
+.cultivo__descripcion{
+	font-size: .9rem;
+	color: #303030;
+	margin-top: 1em;
+	width: 80%;
+}
+
+.cultivo__contenedor-opciones{
+	padding: 20px 10px;
+	width: 30%;
+	overflow: hidden;
+}
+
+.cultivo__contenedor-opciones
+.contenedor{
+	width: 200%;
+	display: flex;
+}
+
+.cultivo__opciones{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cultivo__sub-opciones{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cultivo__opciones a,
+.cultivo__sub-opciones a{
+	/*display: block;*/
+	width: 75%;
+	padding: 10px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #353537;
+	font-size: .95rem;
+	cursor: pointer;
+}
+
+.cultivo__opciones a:hover,
+.cultivo__sub-opciones a:hover{
+	color: #0eb57a !important;
+}
+
+.cultivo__sub-opciones a{
+	font-weight: 600;
+	font-size: .9rem;
+	padding: 5px 10px;
+}
+
+/*===========================================
+						AFECCION 
+===========================================*/
+
+.contenedor-breadcrumb{
+	background: #fff;
+}
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: .8rem;
+    color: #0eb57a;
+    font-weight: 600;
+}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: ">";
+}
+
+ul.breadcrumb li a {
+    color: #959595;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.enfer-contenedor-cultivo{
+	width: 50%;
+	margin: 50px auto;
+	padding-bottom: 0px;
+}
+
+.enfer-cultivo{
+	width: 30%;
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+.enfer-cultivo__imagen{
+	width: 100%;
+}
+
+.enfer-cultivo__imagen img{
+	width: 100%;
+	vertical-align: top;
+	border-radius: 50%;
+}
+
+.enfer-cultivo__nombre-comun{
+	font-weight: bold;
+	text-align: center;
+	font-size: 2rem;
+	padding-top: 15px;
+}
+
+.enfer-cultivo__nombre-cientifico{
+	font-size: 1.2rem;
+	font-style: italic;
+	color: #959595;
+	text-align: center;
+}
+
+.contenedor-enfermedades{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.fila-enfermedades{
+	display: flex;
+	justify-content: center;
+}
+
+.enfermedad{
+	margin: 25px 20px;
+	cursor: pointer;
+	position: relative;
+	width: 200px;
+}
+
+.enfermedad__imagen{
+	width: 100%;
+	background: #000;
+	overflow: hidden;
+}
+
+.enfermedad__imagen img{
+	width: 100%;
+	vertical-align: top;
+	opacity: .9;
+	transition: opacity .2s, transform .2s;
+}
+
+.enfermedad__informacion{
+	padding:10px 20px;
+	background: #fff;
+	border-bottom: 3px solid transparent;
+	transition: border .2s;	
+}
+
+.enfermedad:hover
+.enfermedad__informacion{
+	border-color: #0eb57a;
+}
+
+.enfermedad:hover
+.enfermedad__imagen img{
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+.enfermedad__nombre-comun{
+	font-size: 1.15rem;
+}
+
+.enfermedad__nombre-cientifico{
+	font-size: .9rem;
+	color: #959595;
+	font-style: italic;
+	margin-top: -5px;
+}
+
+.contenedor-tratamiento{
+	width: 80%;
+	margin: 0 auto;
+	display: none;
+	margin-bottom: 20px;
+}
+
+.contenedor-tratamiento-interior{
+	display: flex;
+	width: 100%;
+}
+
+.enfermedad-elegida{
+	width: 20%;
+}
+
+.enfermedad-elegida-img{
+	width: 100%;
+	max-width: 200px;
+	margin: 0 auto 10px auto;
+}
+
+.enfermedad-elegida-img img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.enfermedad-elegida > h2,
+.enfermedad-elegida > h5{
+	text-align: center;
+}
+
+.enfermedad-elegida > h2{
+	font-weight: 600;
+}
+
+.tratamiento{
+	width: 60%;
+	padding: 0 30px;
+}
+
+.caracteristicas-tratamiento{
+	margin-bottom: 50px;
+}
+
+.titulo-caracteristica{
+	padding-bottom: 5px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	border-bottom: 1px solid rgba(0,0,0,.3);
+	display: block;
+}
+
+.tipos-tratamientos{
+	width: 20%;
+}
+
+.tipos-tratamientos > span,
+.tipos-tratamientos > a{
+	display: block;
+}
 
 
+.titulo-tipos{
+	font-size: 1.1rem;
+	font-weight: 600;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(0,0,0,.5);
+	margin-bottom: 10px;
+}
 
+.tipos-tratamientos > a{
+	color: #000;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
 
+.tratamiento-activo{
+	font-weight: bold;
+	color: #0eb57a !important;
+}
+
+.btn-mostrar-afecciones{
+	text-decoration: underline !important;
+	margin-top: 50px;
+	font-style: italic;
+	color: #959595;
+	font-weight: .9rem;
+	display: inline;
+}
