@@ -486,7 +486,7 @@ ul.breadcrumb li a:hover {
 }
 
 .enfermedad-elegida{
-	width: 20%;
+	width: 30%;
 }
 
 .enfermedad-elegida-img{
@@ -510,7 +510,7 @@ ul.breadcrumb li a:hover {
 }
 
 .tratamiento{
-	width: 60%;
+	width: 70%;
 	padding: 0 30px;
 }
 
@@ -520,14 +520,24 @@ ul.breadcrumb li a:hover {
 
 .titulo-caracteristica{
 	padding-bottom: 5px;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	font-weight: 600;
-	border-bottom: 1px solid rgba(0,0,0,.3);
 	display: block;
+	background: #0eb57a;
+	color: #fff;
+	padding: 5px 10px;
+}
+
+.descripcion-caracteristica{
+	padding: 5px 10px;
 }
 
 .tipos-tratamientos{
-	width: 20%;
+	width: 70%;
+	max-width: 300px;
+	margin: 30px auto;
+	background: #F7F7F7;
+	position: relative;
 }
 
 .tipos-tratamientos > span,
@@ -535,19 +545,43 @@ ul.breadcrumb li a:hover {
 	display: block;
 }
 
-
 .titulo-tipos{
-	font-size: 1.1rem;
+	font-size: 1rem;
 	font-weight: 600;
-	padding-bottom: 5px;
-	border-bottom: 1px solid rgba(0,0,0,.5);
-	margin-bottom: 10px;
+	background: #0eb57a;
+	color: #fff;
+	padding: 5px;
+	text-align: center;
 }
 
-.tipos-tratamientos > a{
+.lista-tratamientos{list-style: none;width: 100%}
+
+.lista-tratamientos li{
+	width: 100%;
+	position: relative;
+}
+
+.lista-tratamientos li a{
 	color: #000;
 	cursor: pointer;
-	margin-bottom: 5px;
+	font-size: .9rem;
+	display: block;
+	padding: 5px 10px;
+	z-index: 2;
+	position: relative;
+}
+
+.lista-tratamientos li:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 4px;
+	height: 100%;
+	background: #0eb57a;
+	display: block;
+	transition: width .2s;
+	z-index: 0;
 }
 
 .tratamiento-activo{
@@ -555,11 +589,23 @@ ul.breadcrumb li a:hover {
 	color: #0eb57a !important;
 }
 
+.lista-tratamientos li a:hover{
+	color: #fff !important;		
+}
+
+.lista-tratamientos li:hover:before{
+	width: 100%;
+}
+
 .btn-mostrar-afecciones{
-	text-decoration: underline !important;
-	margin-top: 50px;
-	font-style: italic;
-	color: #959595;
-	font-weight: .9rem;
-	display: inline;
+	margin: 50px auto;
+	color: #fff !important;
+	font-weight: 600;
+	font-size: .9rem;
+	background: #0eb57a;
+	display: block;
+	width: 100px;
+	padding: 4px 15px;
+	text-align: center;
+	cursor: pointer;
 }
