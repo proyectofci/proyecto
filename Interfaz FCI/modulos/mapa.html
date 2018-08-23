@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Proyecto FCI</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/estilos-index.css">
+	<link rel="stylesheet" href="../css/fuentes.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon_32.png" />
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	 <style>
+      .contenedor-mapa{
+      	width: 80%;
+      	height: 500px;
+      	margin: 50px auto;
+      	display: flex;
+      }
+
+      .informacion-mapa{
+      	width: 50%;
+      }
+
+      .mapa{
+      	width: 50%;
+      	height: 100%;
+      }
+
+      .titulo{
+      	font-weight: 300;
+      }
+
+      .form-group label{
+      	font-weight: 600;
+      }
+
+      .form-group span{
+      	padding: 2px 0px;
+      	border-bottom: 1px solid #0eb57a;
+      	display: inline-block;
+      	width: 300px;
+      	margin-left: 10px;
+      	font-size: .95rem;
+      	color: #6C6C6C;
+      }
+
+      .form-group ul{
+      	list-style: none;
+      }
+
+      .form-group ul li{
+      	margin-bottom: 4px;
+      }
+
+      .form-group ul li a:hover{
+      	margin-left: 5px;
+      }
+
+      .form-group ul li a{
+			color: #000 !important;
+			display: inline;
+      	transition: margin-left .2s;
+      }
+
+      .form-group ul li img{
+      	width: 10px;
+      }
+    </style>
+
+</head>
+<body>
+	<div class="contenedor-principal">
+		<header class="header">
+			<div class="header__contenedor-logo">
+				<div class="header__logo">
+					<a href=""><img src="../img/logo_2.png" alt=""></a>
+				</div>
+			</div>
+
+			<section class="header__menu">
+				<nav class="menu__opciones">
+					<a href="../" class="menu__boton">Home</a>
+					<a href="" class="menu__boton menu__boton--active">Cultivos</a>
+					<a href="" class="menu__boton">Diagnostico</a>
+					<a href="" class="menu__boton">Recomendaciones</a>
+				</nav>
+
+				<div class="menu__login">
+					<a href="" class="login__boton">Login</a>
+				</div>
+			</section>
+		</header>
+
+
+
+		<section class="contenedor-mapa">
+			<div class="informacion-mapa">
+				<h2 class="titulo">Cultivos en tu zona geografica</h2>
+
+				<div class="form-group mt-5">
+					<label for="">Tu ubicacion</label>
+					<span>Guayaquil, Guayas, Ecuador</span>
+				</div>
+
+				<div class="form-group mt-2">
+					<label for="">Cultivos disponibles</label>
+
+					<ul>
+						<li><a href=""><img src="../img/arrow.png" alt=""> Arroz</a></li>
+						<li><a href=""><img src="../img/arrow.png" alt=""> Arroz</a></li>
+						<li><a href=""><img src="../img/arrow.png" alt=""> Arroz</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="map" class="mapa"></div>
+		</section>
+
+		<script>
+		var map, infoWindow;
+		function initMap() {
+		   // var map = new google.maps.Map(
+		   // 	document.getElementById('map'), {center: ecuador,zoom: 7});
+
+		  var infoWindow = new google.maps.InfoWindow;
+
+
+		  if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            var map = new google.maps.Map(
+		   	document.getElementById('map'), {center: pos,zoom: 7});
+		  		
+		  		var marker = new google.maps.Marker({position: pos, map: map});
+
+            infoWindow.setPosition(pos);
+            // infoWindow.setContent('Tu ubicacion...');
+            // infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+
+		</script>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkdcuPnxWHq3HvrQvsldnxxl6jR1W5afI&callback=initMap&region=ES"
+			async defer></script>
+	</div>
+</body>
+</html>
