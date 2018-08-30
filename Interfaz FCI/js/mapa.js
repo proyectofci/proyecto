@@ -1,7 +1,8 @@
 
 var map, infoWindow;
+var id_cultivo = 0;
 
-function initMap() {
+function initMap(id_cultivo) {
   var infoWindow = new google.maps.InfoWindow;
 
   if (navigator.geolocation) {
@@ -18,26 +19,30 @@ function initMap() {
 
   		var direcciones;
   		var geocoder = new google.maps.Geocoder;
+  		var listaUbicaciones = $("#lista-ubicaciones");
+  		listaUbicaciones.empty();
 
 		$.ajax({
-			url: 'geo.json',
+			url: '../php/getJsonData.php',
 			dataType: 'json',
+			type: 'GET',
+			data: {'culId': id_cultivo},
 			success: function(data){
-				$.each(data.direcciones, function(index, el) {
+				$.each(data, function(index, el) {
+					console.log(el);
 					var posicion = {
-						lat: el.latitud,
-						lng: el.longitud
+						lat: parseFloat(el.ubiLatitud),
+						lng: parseFloat(el.ubiLongitud)
 					};
 
 					// geocodeLatLng(geocoder, posicion, map);
 					var marker = new google.maps.Marker({
 						position: posicion, 
 						map:map,
-						title: el.nombre
+						title: el.ubiNombre
 					});
 
-					var listaUbicaciones = $("#lista-ubicaciones");
-					var item = "<li> " + el.nombre + "</li>";
+					var item = "<li> " + el.ubiNombre + "</li>";
 					listaUbicaciones.append(item);
 				});	
 			}
@@ -73,15 +78,17 @@ function geocodeLatLng(geocoder, latlng, longitud,map) {
 		if (results[0]) {
 		  var geoNombre = results[0].formatted_address;
 
-		  var marker = new google.maps.Marker({
-				position: latlng, 
-				map:map,
-				title: geoNombre
-			});
+		  $("#txtUbicacion").text(geoNombre);
 
-		  var listaUbicaciones = $("#lista-ubicaciones");
-		  var item = "<li> " + geoNombre + "</li>";
-		  listaUbicaciones.append(item);
+		 //  var marker = new google.maps.Marker({
+			// 	position: latlng, 
+			// 	map:map,
+			// 	title: geoNombre
+			// });
+
+		 //  var listaUbicaciones = $("#lista-ubicaciones");
+		 //  var item = "<li> " + geoNombre + "</li>";
+		 //  listaUbicaciones.append(item);
 		  
 		} 
 		else {
@@ -92,3 +99,12 @@ function geocodeLatLng(geocoder, latlng, longitud,map) {
 	}
   });
 }
+
+$(".btn-cultivo-ubicacion").click(function(){
+	var id_cultivo = $(this).attr('name');
+	console.log(id_cultivo);
+
+	initMap(id_cultivo);
+
+
+});
