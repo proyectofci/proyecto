@@ -1,6 +1,7 @@
 
 var map, infoWindow;
 var id_cultivo = 0;
+var marcaAnterior = null;
 
 function initMap(id_cultivo) {
   var infoWindow = new google.maps.InfoWindow;
@@ -21,6 +22,18 @@ function initMap(id_cultivo) {
   		var geocoder = new google.maps.Geocoder;
   		var listaUbicaciones = $("#lista-ubicaciones");
   		listaUbicaciones.empty();
+		geocodeLatLng(geocoder, pos, map);
+
+		// map.addListener(map, 'click', function(e) {
+  //        // geocodeLatLng(geocoder,0,map);
+  //        console.log(e);        
+  //     });
+
+
+		google.maps.event.addListener(map, 'click', function(e){
+			var latLng = e.latLng;
+			geocodeMap(geocoder,latLng, map);
+		});
 
 		$.ajax({
 			url: '../php/getJsonData.php',
@@ -29,13 +42,13 @@ function initMap(id_cultivo) {
 			data: {'culId': id_cultivo},
 			success: function(data){
 				$.each(data, function(index, el) {
-					console.log(el);
+					// console.log(el);
 					var posicion = {
 						lat: parseFloat(el.ubiLatitud),
 						lng: parseFloat(el.ubiLongitud)
 					};
 
-					// geocodeLatLng(geocoder, posicion, map);
+					
 					var marker = new google.maps.Marker({
 						position: posicion, 
 						map:map,
@@ -70,26 +83,55 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 /* === AL API DETECTA LA LOCALIZACION A PARTIR DE LA LATITUD Y LONGITUD ===*/
-function geocodeLatLng(geocoder, latlng, longitud,map) {
-
+function geocodeLatLng(geocoder, latlng, map) {
   geocoder.geocode({'location': latlng}, function(results, status) {
-  	console.log(status);
+  	console.log('asdasdasdasd');
 	if (status === 'OK') {
 		if (results[0]) {
-		  var geoNombre = results[0].formatted_address;
+		  var geoNombre = results[2].formatted_address;
 
-		  $("#txtUbicacion").text(geoNombre);
+		  $("#textUbicacion").text(geoNombre);		  
+		} 
+		else {
+		  window.alert('No results found');
+		}
+	} else {
+	window.alert('Geocoder failed due to: ' + status);
+	}
+  });
+}
 
-		 //  var marker = new google.maps.Marker({
-			// 	position: latlng, 
-			// 	map:map,
-			// 	title: geoNombre
-			// });
+function geocodeMap(geocoder, latlng, map) {
+  geocoder.geocode({'location': latlng}, function(results, status) {
+  	console.log('asdasdasdasd');
+	if (status === 'OK') {
+		if (results[0]) {
+			var geoNombre;
+		  // var geoNombre = results[0].formatted_address;
 
-		 //  var listaUbicaciones = $("#lista-ubicaciones");
-		 //  var item = "<li> " + geoNombre + "</li>";
-		 //  listaUbicaciones.append(item);
-		  
+		  $.each(results, function(index, el) {
+		  	// console.log(el.address_components);
+
+		  	if(el.address_components.length == 2){
+		  		geoNombre = el.address_components[0].long_name + ', ' + el.address_components[1].long_name;
+		  		
+		  		if(marcaAnterior != null){
+		  			marcaAnterior.setMap(null);
+		  		}
+
+		  		var marker = new google.maps.Marker({
+					position: latlng, 
+					map:map,
+					title: geoNombre
+				});
+
+		  		marcaAnterior = marker;
+
+		  		
+		  		$("#textUbicacion").text(geoNombre);		  
+		  	}
+		  });
+
 		} 
 		else {
 		  window.alert('No results found');
