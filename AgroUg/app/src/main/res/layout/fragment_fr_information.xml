@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.frDescription"
+    app:layout_scrollFlags="scroll|exitUntilCollapsed" android:saveEnabled="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:background="#ECEFF1">
+
+            <TextView
+                android:id="@+id/tvNameInf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:text=""
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/textFont"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre cientifico: "
+                        android:textStyle="bold"
+                        android:textColor="@color/textFont"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvNameScientificInf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/textFont" />
+
+                </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvDescriptionInf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:text="Description"
+                android:textColor="@color/textFont"/>
+
+        </LinearLayout>
+
+
+</FrameLayout>

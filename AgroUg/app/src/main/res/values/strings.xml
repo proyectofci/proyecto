@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">AgroUg</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Usuario Invitado</string>
+    <string name="nav_header_subtitle">AgroUg@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="mi_mensaje"><![CDATA[<u>Seleccione un tratamiento</u>]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="_mensaje">Seleccione</string>
+    <string name="title_activity_popup">popup</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="urlCrop">http://34.237.236.90:8080/agroug/api/afecciones/tipos</string>
+    <string name="title_activity_map">activity_map</string>
+    <string name="title_activity_maps">Map</string>
+
+</resources>
